@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
-import styles from '../styles/Footer.module.css';
+import styles from '../styles/components/Footer.module.css';
 
 const Footer = () => {
   return (
@@ -8,10 +8,9 @@ const Footer = () => {
       <div className={styles.container}>
         {/* About Section */}
         <div className={styles.section}>
-          <h3>About JOMS</h3>
+          <h3>JOMS</h3>
           <p>
-            JOMS is your premium platform for connecting influencers and building secure, meaningful relationships. 
-            Join us to network, share experiences, and grow.
+          JOMS was born out of the shared vision of passionate individuals who believe in the power of innovation to make a difference.
           </p>
         </div>
 

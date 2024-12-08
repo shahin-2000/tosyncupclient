@@ -1,0 +1,157 @@
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  padding: 0 20px; /* Adjusted padding for mobile */
+  min-height: 100vh; /* Fullscreen hero */
+  overflow: hidden;
+  z-index: 1;
+  /* background: #000; */
+  background: url("/public/assets/images/hero.jpg") no-repeat center center/cover;
+  object-fit: cover;
+
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Dark overlay with opacity */
+  z-index: -1; /* Ensure the overlay is behind content */
+}
+
+.hero-content {
+  position: relative; /* Positioning for content */
+  color: #ffffff; /* Ensure text color contrasts with the dark background */
+  text-align: center; /* Center text */
+}
+
+/* Video Background */
+
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+  z-index: -1;
+}
+
+/* Hero Content */
+.heroContent {
+  max-width: 100%; /* Use full width */
+  text-align: center;
+  animation: fadeIn 1.5s ease-out forwards;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Added a slight upward animation */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Main Heading */
+.heroContent h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ff6f61 0%, #4d43ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transform-origin: center; /* For 3D animation */
+}
+
+/* Subheading */
+.heroContent h5 {
+  font-size: 2.8rem;
+  margin: 10px 0;
+  color: #717171;
+}
+
+/* Paragraph */
+.heroContent p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  color: #d3d3d3;
+  font-style: italic;
+}
+
+.scrollDown {
+position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0); /* Original position */
+  }
+  50% {
+    transform: translate(-50%, -10px); /* Move up slightly */
+  }
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .heroContent h1 {
+    font-size: 3rem; /* Reduced size for better readability */
+  }
+
+  .heroContent h5 {
+    font-size: 2rem; /* Adjusted for smaller screens */
+  }
+
+  .heroContent p {
+    font-size: 1.5rem; /* Adjusted for smaller screens */
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem; /* Reduced size for better readability */
+  }
+
+  .heroContent h5 {
+    font-size: 1.6rem; /* Adjusted for smaller screens */
+  }
+
+  .heroContent p {
+    font-size: 1.2rem; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.6rem; /* Further adjusted for smaller screens */
+  }
+  .heroContent h5 {
+    font-size: 1.2rem; /* Further adjusted for smaller screens */
+  }
+  .heroContent p {
+    font-size: 0.8rem; /* Further adjusted for smaller screens */
+  }
+}
+
+

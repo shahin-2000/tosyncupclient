@@ -1,0 +1,128 @@
+:root {
+  --primary-color: #ff6f61;
+  --highlight-color: #6c63ff;
+  --text-color: #e4e4e4;
+}
+
+.ourStory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0a0a0a;
+  padding: 8rem 0;
+  overflow: hidden;
+  z-index: 100;
+  
+
+}
+
+.storyContainer {
+  display: flex; /* Flex display to align image and text side by side */
+  flex-direction: row; /* Side by side layout */
+  max-width: 80%;
+  background: linear-gradient(45deg, #fe7696, #7873ff);
+  width: 100%;
+  margin: 0 auto;
+  height: auto; /* Auto height to accommodate content */
+  border-radius: 10px; /* Rounded corners for the container */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+.imageWrapper {
+  flex: 1; /* Flex-grow for image section */
+  display: flex;
+  justify-content: center;
+}
+
+.storyImage {
+  width: 100%;
+  max-height: 400px; /* Set a max height for the image */
+  object-fit: cover; /* Cover the area without stretching */
+  border-radius: 10px 0 0 10px; /* Rounded corners for the image */
+}
+
+.storyTitle {
+  font-size: 3rem;
+  color: #ff6f91;
+  margin-bottom: 6rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.textWrapper {
+  flex: 2; /* Flex-grow for text section */
+  padding: 4rem; /* Add padding around text */
+}
+
+.storyText {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin: 1.5rem 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ctaButton {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: linear-gradient(45deg, var(--primary-color), var(--highlight-color));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid white;
+}
+
+.ctaButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .storyContainer {
+    flex-direction: column; /* Stack vertically on smaller screens */
+  }
+
+  .storyTitle {
+    font-size: 2rem;
+  }
+  .textWrapper {
+    padding: 1rem; /* Add padding around text */
+  }
+  .storyText {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .imageWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .storyImage {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .storyTitle {
+    font-size: 1.5rem;
+  }
+  .textWrapper {
+    padding: 0.8rem; /* Add padding around text */
+  }
+  .storyText {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}

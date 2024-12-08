@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
+import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Features from "./components/Features";
-// import Community from "./components/Community";
-import Events from "./components/Events";
-import Testimonials from "./components/Testimonials";
+import AboutUs from "./components/AboutUs";
+import Story from "./components/Story";
+import Impact from "./components/Impact";
+import Vision from "./components/Vision";
+import ContactUs from "./components/ContactUs";
+import WhyChooseUs from "./components/WhyChooseUs";
+import Products from "./components/Products";
+import JoinUs from "./components/JoinUs";
+
 import Footer from "./components/Footer";
-import Preloader from "./components/Preloader";
 
 import "./styles/globals.css";
 
@@ -14,28 +19,30 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading process
     const loadData = () => {
-      setTimeout(() => {
-        setLoading(false); // Set loading to false after 5 seconds
-      }, 2000);
+      setTimeout(() => setLoading(false), 2000); // Use constants for timeouts in production
     };
 
     loadData();
   }, []);
+
   return (
     <div>
       {loading ? (
         <Preloader />
       ) : (
         <>
-          <Navbar />
           <main>
+          <Navbar />
             <Hero />
-            <Features />
-            {/* <Community /> */}
-            <Events />
-            <Testimonials />
+            <AboutUs />
+            <Story />
+            <Impact />
+            <Vision />
+            <WhyChooseUs />
+            <Products />
+            <JoinUs />  
+            <ContactUs />
           </main>
           <Footer />
         </>

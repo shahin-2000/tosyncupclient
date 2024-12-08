@@ -1,6 +1,6 @@
 /* Footer Base */
 .footer {
-    background: linear-gradient(145deg, #1c1b33, #2a2746);
+    background: linear-gradient(135deg, #dc5346 0%, #4d43ff 100%);
     color: #ffffff;
     padding: 3rem 1rem 2rem;
     overflow: hidden;
@@ -30,7 +30,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
   }
   
   /* Section Styling */
@@ -39,13 +39,14 @@
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
+    /* align-items: space-evenly; */
     min-width: 250px;
   }
   
-  h3 {
-    font-size: 1.8rem;
+ .footer h3 {
+    font-size: 1.2rem;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff6f91, #ff9671);
+    background: #ffffff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
@@ -56,6 +57,7 @@
     line-height: 1.8;
     color: #d1d1e0;
     margin-bottom: 1rem;
+    padding: 0;
   }
   
   /* Newsletter Section */
@@ -79,7 +81,8 @@
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 4px;
-    background: linear-gradient(145deg, #ff6f91, #ff9671);
+    background: linear-gradient(135deg, #dc5346 0%, #4d43ff 100%);
+    border: 1px solid #969696;
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
@@ -105,6 +108,10 @@
     color: #ffffff;
     text-decoration: none;
     position: relative;
+  }
+
+  .links a:hover {
+    color: #ff6f91;
   }
   
   .links a::after {
@@ -145,6 +152,7 @@
   .social a:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 15px rgba(255, 111, 145, 0.5);
+    background: linear-gradient(135deg, #dc5346 0%, #4d43ff 100%);
   }
   
   /* Copyright Section */

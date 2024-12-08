@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import styles from '../styles/Testimonials.module.css';
+import styles from '../styles/components/Testimonials.module.css';
 
 const Testimonials = () => {
   const testimonials = [
@@ -26,8 +26,8 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className={styles.testimonials}>
-      <h2>What Our Members Say</h2>
-      <p>Discover how JOMS has transformed the lives and careers of our elite influencers.</p>
+      <h2>Our Team</h2>
+      <p>A diverse and dynamic group of professionals with expertise in technology, design, marketing, and operations. United by a shared passion for creating impactful products.</p>
       <div className={styles.testimonialGrid}>
         {testimonials.map((t, index) => (
           <div key={index} className={styles.testimonialCard}>

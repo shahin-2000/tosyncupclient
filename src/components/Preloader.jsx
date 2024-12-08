@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ClipLoader } from 'react-spinners';
-import styles from '../styles/Preloader.module.css'; // Ensure this path is correct
+import styles from '../styles/components/Preloader.module.css';
 
 const Preloader = () => {
   const [progress, setProgress] = useState(0);
@@ -15,7 +15,7 @@ const Preloader = () => {
           setLoadingComplete(true);
           return 100;
         }
-        return prev + 10; // Increment by 10% every 500ms
+        return prev + 10;
       });
     }, 500);
 
