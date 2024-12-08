@@ -1,0 +1,29 @@
+/* globals.css */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2, h3, p {
+    margin: 0;
+  }
+  
+  section {
+    padding: 60px 20px;
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  

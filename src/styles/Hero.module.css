@@ -1,0 +1,168 @@
+/* Hero Section Styles */
+.hero {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  padding: 0px 20px; /* Adjusted padding for mobile */
+  min-height: 100vh; /* Fullscreen hero */
+  overflow: hidden;
+  z-index: 1;
+  perspective: 1000px;
+}
+
+/* Video Background */
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.7) contrast(1.2); /* Enhance visibility */
+  transform: scale(1.1); /* Subtle zoom effect */
+  animation: videoZoom 12s infinite alternate; /* Zoom in and out */
+}
+
+@keyframes videoZoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+/* Hero Content */
+.heroContent {
+  max-width: 100%; /* Use full width */
+  margin: 0 auto;
+  /* z-index: 10; */
+  text-align: center;
+  transform: rotateX(0deg); /* Default 3D effect */
+  animation: fadeIn 1.5s ease-out forwards;
+  position: relative;
+  padding: 0 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+/* Main Heading */
+.heroContent h1 {
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #000000;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff6f91, #ff9671);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  transform-origin: center; /* For 3D animation */
+  animation: textSwing 3s infinite ease-in-out;
+}
+
+@keyframes textSwing {
+  0%, 100% {
+    transform: rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: rotateY(20deg) scale(1.05);
+  }
+}
+
+/* Subheading */
+.heroContent h5 {
+  font-size: 2.8rem;
+  margin: 10px 0;
+  color: #717171;
+}
+
+/* Paragraph */
+.heroContent p {
+  margin: 20px 0;
+  line-height: 1.6;
+  font-size: 1.8rem;
+  color: #d3d3d3;
+  font-style: italic;
+}
+
+/* CTA Buttons */
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.cta {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  padding: 12px 24px; /* Consistent padding for buttons */
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 3rem; /* Reduced size for better readability */
+  }
+
+  .heroContent h5 {
+    font-size: 2rem; /* Adjusted for smaller screens */
+  }
+
+  .heroContent p {
+    font-size: 1.2rem; /* Adjusted for smaller screens */
+  }
+
+  .ctaButtons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Spacing between buttons */
+  }
+
+  .cta {
+    width: 100%; /* Full width buttons */
+    max-width: 300px; /* Max width for buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 2.5rem; /* Further adjusted for smaller screens */
+  }
+  .heroContent h5 {
+    font-size: 1.5rem; /* Further adjusted for smaller screens */
+  }
+  .heroContent p {
+    font-size: 1rem; /* Further adjusted for smaller screens */
+  }
+}
