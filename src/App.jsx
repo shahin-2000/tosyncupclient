@@ -2,14 +2,6 @@ import React, { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import AboutUs from "./components/AboutUs";
-import Story from "./components/Story";
-import Impact from "./components/Impact";
-import Vision from "./components/Vision";
-import ContactUs from "./components/ContactUs";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Products from "./components/Products";
-import JoinUs from "./components/JoinUs";
 
 import Footer from "./components/Footer";
 
@@ -32,17 +24,9 @@ const App = () => {
         <Preloader />
       ) : (
         <>
-          <main>
           <Navbar />
+          <main>
             <Hero />
-            <AboutUs />
-            <Story />
-            <Impact />
-            <Vision />
-            <WhyChooseUs />
-            <Products />
-            <JoinUs />  
-            <ContactUs />
           </main>
           <Footer />
         </>
