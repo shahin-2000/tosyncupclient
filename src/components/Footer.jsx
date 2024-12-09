@@ -8,21 +8,21 @@ const Footer = () => {
       <div className={styles.container}>
         {/* About Section */}
         <div className={styles.section}>
-          <h3>JOMS</h3>
+          <h3>ToSyncUp</h3>
           <p>
-          JOMS was born out of the shared vision of passionate individuals who believe in the power of innovation to make a difference.
+          ToSyncUp was born out of the shared vision of passionate individuals who believe in the power of innovation to make a difference.
           </p>
         </div>
 
         {/* Newsletter Section */}
-        <div className={styles.section}>
+        {/* <div className={styles.section}>
           <h3>Subscribe to Our Newsletter</h3>
           <p>Get the latest updates, tips, and insights directly to your inbox.</p>
           <form className={styles.form}>
             <input type="email" placeholder="Enter your email" required />
             <button type="submit">Subscribe</button>
           </form>
-        </div>
+        </div> */}
 
         {/* Quick Links Section */}
         <div className={styles.section}>
@@ -61,7 +61,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className={styles.copy}>
-        <p>© 2024 JOMS. All Rights Reserved.</p>
+        <p>© 2024 ToSyncUp. All Rights Reserved.</p>
       </div>
     </footer>
   );

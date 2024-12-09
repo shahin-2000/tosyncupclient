@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <a className={styles.joinButton} href='/signup' rel="noreferrer" target='_blank'>Join the Waitlist</a>
+            <a className={styles.joinButton} href='/signup' rel="noreferrer" target='_blank' color='#fff'>Join the Waitlist</a>
           </li>
         </ul>
       </nav>

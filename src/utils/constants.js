@@ -6,14 +6,6 @@ export const PLAY_STORE_URL = 'https://play.google.com/store/';
 
 export const navLinks = [
   { id: 'home', title: 'Home' },
-  { id: 'aboutus', title: 'About Us' },
-  { id: 'ourstory', title: 'Our Story' },
-  { id: 'ourimpact', title: 'Our Impact' },
-  { id: 'ourvision', title: 'Our Vision' },
-  { id: 'whychooseus', title: 'Why Choose Us' },
-  { id: 'ourproducts', title: 'Products' },
-  { id: 'ourteam', title: 'Our Team' },
-  { id: 'joinus', title: 'Join Us' },
 ];
 
 export const headerTagline = 'Innovating for Global Impact: Transforming Lives Through Meaningful Consumer Experiences';

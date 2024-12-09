@@ -2,8 +2,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 //import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import SignupForm from "./components/SignupForm";
+import Hero from "./pages/main/Hero";
+import SignupForm from "./pages/auth/SignupForm";
 import Footer from "./components/Footer";
 
 import "./styles/globals.css";

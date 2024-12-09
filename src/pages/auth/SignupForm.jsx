@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import styles from '../styles/components/SignupForm.module.css';
+import styles from '../../styles/pages/auth/SignupForm.module.css';
 
 
 const SignupForm = () => {
