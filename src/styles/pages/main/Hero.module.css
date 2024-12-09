@@ -49,7 +49,7 @@
 .heroContent {
   max-width: 100%; /* Use full width */
   text-align: center;
-  animation: fadeIn 1.5s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
   position: relative;
 }
 
@@ -89,7 +89,7 @@
   margin: 20px 0;
   line-height: 1.6;
   font-size: 1.8rem;
-  color: #d3d3d3;
+  color: #a7a7a7;
   font-style: italic;
 }
 

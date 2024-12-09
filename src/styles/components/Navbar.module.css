@@ -37,10 +37,12 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #000000;
+  /* color: #000000; */
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
+
+
 
 .joinButton {
   padding: 10px 25px;
@@ -52,7 +54,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.joinButton a {
+.joinButton {
   color: #fff;
   text-decoration: none;
 }
@@ -71,6 +73,10 @@
 
 .navLinks.active {
   transform: translateY(0);
+}
+
+.link {
+  color: #000000;
 }
 
 .link:hover {

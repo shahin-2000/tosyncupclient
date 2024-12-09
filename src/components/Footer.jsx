@@ -29,7 +29,6 @@ const Footer = () => {
           <h3>Quick Links</h3>
           <ul className={styles.links}>
             <li><a href="/about-us">About Us</a></li>
-            <li><a href="/events">Events</a></li>
             <li><a href="/privacy-policy">Privacy Policy</a></li>
             <li><a href="/terms-of-service">Terms of Service</a></li>
             <li><a href="/contact">Contact Us</a></li>

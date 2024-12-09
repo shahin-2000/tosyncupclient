@@ -5,7 +5,7 @@ export const APP_STORE_URL = 'https://www.apple.com/app-store/';
 export const PLAY_STORE_URL = 'https://play.google.com/store/';
 
 export const navLinks = [
-  { id: 'home', title: 'Home' },
+  { id: 'home', title: 'Home', route: '/' },
 ];
 
 export const headerTagline = 'Innovating for Global Impact: Transforming Lives Through Meaningful Consumer Experiences';

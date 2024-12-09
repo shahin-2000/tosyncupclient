@@ -1,85 +1,195 @@
+/* General Container Styling */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background:  rgba(0, 0, 0, 0.9);
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Form Styling */
+.form {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.title {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Field Container Styling */
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555555;
+}
+
+/* Input Styling */
+.textarea, .input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.textarea:focus, .input:focus {
+  border-color: #007bff;
+}
+
+/* OTP Verify Container */
+.verifyContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.otpButton, .verifyButton {
+  padding: 10px 15px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.otpButton:hover, .verifyButton:hover {
+  background-color: #000000;
+}
+
+.successMessage {
+  color: #4c9677;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.errorMessage {
+  color: #d9665a;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Navigation Buttons */
+/* .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+} */
+
+.navButton,
+.prevButton,
+.submitButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.navButton {
+  background-color: #000000;
+  color: white;
+}
+
+.navButton:hover {
+  background-color: #000000;
+}
+
+.prevButton {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.prevButton:hover {
+  color: #ff6f61;
+}
+
+.submitButton {
+  background-color: #000000;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #000000;
+}
+
+/* Disabled Button Styling */
+.navButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Progress Bar */
+.progressBar {
+  height: 5px;
+  background: #eeeeee;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background: #000000;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .form {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
+    padding: 15px;
   }
-  
+
   .title {
-    font-size: 24px;
-    color: #333333;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
   }
-  
-  .field {
-    margin-bottom: 15px;
-  }
-  
-  .label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #444444;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .input:focus {
-    border-color: #6a11cb;
-    outline: none;
-    box-shadow: 0px 0px 5px rgba(106, 17, 203, 0.5);
-  }
-  
+
   .verifyContainer {
-    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .verifyButton {
+    width: 100%;
+  }
+
+  .navigation {
+    flex-direction: column;
     gap: 10px;
   }
-  
-  .verifyButton {
-    background: black;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .verifyButton:hover {
-    background:  rgb(56, 48, 48);
-  }
-  
+
+  .navButton,
+  .prevButton,
   .submitButton {
     width: 100%;
-    background: black;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
   }
-  
-  .submitButton:hover {
-    background: rgb(56, 48, 48)  ;
-  }
-  
+}

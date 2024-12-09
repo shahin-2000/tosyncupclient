@@ -1,28 +1,12 @@
-// import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-//import Preloader from "./components/Preloader";
 import Navbar from "./components/Navbar";
 import Hero from "./pages/main/Hero";
 import SignupForm from "./pages/auth/SignupForm";
 import Footer from "./components/Footer";
-
 import "./styles/globals.css";
 
 const App = () => {
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const loadData = () => {
-  //     setTimeout(() => setLoading(false), 2000); // Use constants for timeouts in production
-  //   };
-
-  //   loadData();
-  // }, []);
-
-  // if (loading) {
-  //   return <Preloader />;
-  // }
-
   return (
     <Router>
       <Navbar />
