@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <div className={styles.logo}>JOMS</div>
+        <div className={styles.logo}>ToSyncUp</div>
         <div className={styles.menuIcon} onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <a className={styles.joinButton} href='https://tosyncup.com/launching-soon' rel="noreferrer" target='_blank'>Join the Waitlist</a>
+            <a className={styles.joinButton} href='/signup' rel="noreferrer" target='_blank'>Join the Waitlist</a>
           </li>
         </ul>
       </nav>
