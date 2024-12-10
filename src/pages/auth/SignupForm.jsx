@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '../../styles/pages/auth/SignupForm.module.css';
+import { API_BASE_URL } from '../../utils/constants';
 
+// const API_BASE_URL = 'http://localhost:8000';
 const SignupForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    mobile: '123',
-    otpMobile: '',
-    email: 'x',
+    phone: '',
+    otpphone: '',
+    email: '',
     otpEmail: '',
     instagram: '',
     questionAnswer: '',
   });
   const [activeTab, setActiveTab] = useState(1);
   const [progress, setProgress] = useState(25);
-  const [otpRequestStatus, setOtpRequestStatus] = useState({ mobile: false, email: false });
-  const [otpVerifyStatus, setOtpVerifyStatus] = useState({ mobile: true, email: false });
-  const [eligibilityStatus, setEligibilityStatus] = useState('Success'); // Pending, Success, Failure
+  const [otpRequestStatus, setOtpRequestStatus] = useState({ phone: false, email: false });
+  const [otpVerifyStatus, setOtpVerifyStatus] = useState({ phone: false, email: false });
+  const [eligibilityStatus, setEligibilityStatus] = useState(''); // Pending, Success, Failure
   const [loading, setLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
@@ -28,14 +30,15 @@ const SignupForm = () => {
   const handleOtpRequest = async (type) => {
     try {
       const endpoint =
-        type === 'mobile'
-          ? 'https://tosyncupserver.onrender.com/api/otp/send-phone-otp'
-          : 'https://tosyncupserver.onrender.com/api/otp/send-email-otp';
+        type === 'phone'
+          ? `${API_BASE_URL}/api/verify/send-phone-otp`
+          : `${API_BASE_URL}/api/verify/send-email-otp`;
 
-      const payload = type === 'mobile' ? { mobile: formData.mobile } : { email: formData.email };
-
+      const payload = type === 'phone' ? { phone: formData.phone } : { email: formData.email };
+      console.log(payload, " ; payload")
+      const res = await axios.post(endpoint, payload);
+      console.log('otp: ', res.data.otp);
       setOtpRequestStatus({ ...otpRequestStatus, [type]: true });
-      await axios.post(endpoint, payload);
       alert(`OTP sent to your ${type}!`);
     } catch (error) {
       console.error(`Error sending OTP for ${type}:`, error);
@@ -45,13 +48,13 @@ const SignupForm = () => {
   const handleOtpVerification = async (type) => {
     try {
       const endpoint =
-        type === 'mobile'
-          ? 'https://tosyncupserver.onrender.com/api/otp/verify-phone'
-          : 'https://tosyncupserver.onrender.com/api/otp/verify-email';
+        type === 'phone'
+          ? `${API_BASE_URL}/api/verify/verify-phone-otp`
+          : `${API_BASE_URL}/api/verify/verify-email-otp`;
 
       const payload =
-        type === 'mobile'
-          ? { mobile: formData.mobile, otp: formData.otpMobile }
+        type === 'phone'
+          ? { phone: formData.phone, otp: formData.otpphone }
           : { email: formData.email, otp: formData.otpEmail };
 
           setOtpVerifyStatus({ ...otpVerifyStatus, [type]: true });
@@ -73,7 +76,7 @@ const SignupForm = () => {
     setEligibilityStatus(''); // Reset status
 
     try {
-      const response = await axios.post('https://tosyncupserver.onrender.com/api/otp/verify-instagram', { username });
+      const response = await axios.post(`${API_BASE_URL}/api/otp/verify-instagram`, { username });
       if (response.data?.eligible) {
         setEligibilityStatus('Success'); // Eligible
         alert(`${username} is eligible!`);
@@ -104,7 +107,7 @@ const SignupForm = () => {
   };
 
   const isNextEnabled =
-    (activeTab === 1 && otpVerifyStatus.mobile && formData.firstName && formData.lastName && formData.mobile) ||
+    (activeTab === 1 && otpVerifyStatus.phone && formData.firstName && formData.lastName && formData.phone) ||
     (activeTab === 2 && otpVerifyStatus.email && formData.email) ||
     (activeTab === 3 && eligibilityStatus === "Success") ||
     (activeTab === 4 && formData.questionAnswer);
@@ -112,7 +115,7 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://tosyncupserver.onrender.com/api/auth/signup', formData);
+      await axios.post(`${API_BASE_URL}/api/auth/signup`, formData);
       alert('Sign-up successful!');
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -154,51 +157,51 @@ const SignupForm = () => {
               />
             </div>
             <div className={styles.field}>
-              <label htmlFor="mobile" className={styles.label}>Mobile Number</label>
+              <label htmlFor="phone" className={styles.label}>Mobile Number</label>
               <div className={styles.otpContainer}>
                 <input
                   type="tel"
-                  id="mobile"
+                  id="phone"
                   placeholder="Enter your mobile number"
                   className={styles.input}
-                  value={formData.mobile}
+                  value={formData.phone}
                   onChange={handleChange}
-                  disabled={otpVerifyStatus.mobile}
+                  disabled={otpVerifyStatus.phone}
                   required
                 />
-                {!otpVerifyStatus.mobile && <button
+                {!otpVerifyStatus.phone && <button
                   type="button"
                   className={styles.otpButton}
-                  onClick={() => handleOtpRequest('mobile')}
+                  onClick={() => handleOtpRequest('phone')}
                 >
                   Send OTP
                 </button>}
               </div>
             </div>
-            {otpRequestStatus.mobile && (
+            {otpRequestStatus.phone && (
               <div className={styles.field}>
-                <label htmlFor="otpMobile" className={styles.label}>Enter OTP</label>
+                <label htmlFor="otpphone" className={styles.label}>Enter OTP</label>
                 <div className={styles.otpContainer}>
                   <input
                     type="text"
-                    id="otpMobile"
+                    id="otpphone"
                     placeholder="Enter OTP"
                     className={styles.input}
-                    value={formData.otpMobile}
+                    value={formData.otpphone}
                     onChange={handleChange}
                   />
                   <button
                     type="button"
                     className={styles.otpButton}
-                    onClick={() => handleOtpVerification('mobile')}
+                    onClick={() => handleOtpVerification('phone')}
                   >
                     Verify
                   </button>
                 </div>
               </div>
             )}
-            {otpVerifyStatus.mobile && (
-              <div className={styles.successMessage}>Mobile Verification Successful ✅</div>
+            {otpVerifyStatus.phone && (
+              <div className={styles.successMessage}>phone Verification Successful ✅</div>
             )}
           </>
         )}

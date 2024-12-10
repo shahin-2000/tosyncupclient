@@ -1,6 +1,6 @@
 import { FaEye, FaFlag, FaHeart } from 'react-icons/fa';
 
-export const API_BASE_URL = 'https://joms.in/';
+export const API_BASE_URL = 'https://tosyncupserver.onrender.com';
 export const APP_STORE_URL = 'https://www.apple.com/app-store/';
 export const PLAY_STORE_URL = 'https://play.google.com/store/';
 
