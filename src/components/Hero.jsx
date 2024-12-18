@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/pages/main/Hero.module.css';
+import styles from '../styles/components/Hero.module.css';
 // import { FaChevronDown } from 'react-icons/fa';
 const Hero = () => {
 
@@ -17,9 +17,9 @@ const Hero = () => {
         <h1>
           ToSyncUp
         </h1>
-        <h5>Innovating for Global Impact.</h5>
+        <h5>Meet the Highly Admired Beyond Borders</h5>
         <p>
-          Transforming Lives Through Meaningful Consumer Experiences
+        We created To Sync Up to transform how highly admired individuals find and build meaningful connections. It’s not just about meeting, it’s about finding someone who truly understands your world.
         </p>
         
       </div>

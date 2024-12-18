@@ -1,0 +1,82 @@
+/* Main container for About Us */
+.aboutContainer {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Restrict the width for larger screens */
+    text-align: center;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Subtle rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Hero section styling */
+  .heroSection {
+    background: linear-gradient(135deg, #6c63ff, #a29bfe); /* Gradient background */
+    color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 8px;
+  }
+  
+  .heroHeading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: capitalize; /* Uniform text style */
+  }
+  
+  /* Content section styling */
+  .contentSection {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .description {
+    font-size: 1.125rem; /* Slightly larger than base font size */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333333; /* Neutral text color for readability */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .heroHeading {
+      font-size: 2rem; /* Adjust font size for tablets */
+    }
+  
+    .description {
+      font-size: 1rem; /* Slightly smaller font for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroSection {
+      padding: 30px 15px; /* Reduce padding on smaller screens */
+    }
+  
+    .contentSection {
+      padding: 15px;
+    }
+  
+    .heroHeading {
+      font-size: 1.8rem; /* Further reduce font size */
+    }
+  
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aboutContainer {
+      padding: 15px;
+    }
+  
+    .heroHeading {
+      font-size: 1.5rem; /* Compact font size for mobile */
+    }
+  
+    .description {
+      font-size: 0.875rem; /* Smaller font for compact screens */
+    }
+  }
+  
